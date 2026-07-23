@@ -1,0 +1,33 @@
+name: Daily Data Fetch
+
+on:
+  schedule:
+    # UTC 16:20 = Beijing 00:20 (data updates: passwords 00:00, ammo 00:05, mfg/exchange 00:15)
+    - cron: '20 16 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write # Needed to push data.json back to the repo
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Fetch data from kkrb.net
+        run: python fetch_data.py
+
+      - name: Commit and push data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Auto-update: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M') Beijing time"
+          git push

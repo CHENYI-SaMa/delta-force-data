@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>三角洲行动每日数据</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: -apple-system, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 12px;
+  padding-bottom: 40px;
+}
+.header {
+  text-align: center;
+  padding: 16px 0 12px;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 16px;
+}
+.header h1 {
+  font-size: 20px;
+  color: #58a6ff;
+  margin-bottom: 4px;
+}
+.header .date {
+  font-size: 13px;
+  color: #8b949e;
+}
+.header .refresh-info {
+  font-size: 11px;
+  color: #6e7681;
+  margin-top: 4px;
+}
+.copy-all-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0d1117;
+  padding: 8px 0;
+  margin: -12px -12px 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  background: #238636;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.btn:active { background: #1a7f37; }
+.btn.copied { background: #1f883d; }
+.btn-secondary {
+  background: #30363d;
+  color: #e6edf3;
+}
+.btn-secondary:active { background: #3d444d; }
+.btn-small {
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.btn-flex { flex: 1; }
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0f6fc;
+}
+.pwd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.pwd-item {
+  background: #21262d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pwd-item.full { grid-column: 1 / -1; }
+.pwd-label { color: #8b949e; font-size: 13px; }
+.pwd-value { color: #f85149; font-weight: bold; font-size: 16px; font-family: monospace; letter-spacing: 1px; }
+.mfg-item, .exchange-item {
+  background: #21262d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+}
+.mfg-item:last-child, .exchange-item:last-child { margin-bottom: 0; }
+.item-name { color: #e6edf3; font-size: 15px; }
+.item-profit { color: #3fb950; font-size: 13px; margin-top: 2px; }
+.ammo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ammo-table th {
+  text-align: left;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+}
+.ammo-table td {
+  padding: 8px;
+  border-bottom: 1px solid #21262d;
+  font-size: 14px;
+}
+.ammo-table td:first-child { color: #e6edf3; }
+.ammo-table .high { color: #f85149; }
+.ammo-table .low { color: #3fb950; }
+.ammo-name { font-size: 13px; }
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #8b949e;
+}
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #f85149;
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #238636;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; }
+.footer {
+  text-align: center;
+  color: #6e7681;
+  font-size: 11px;
+  margin-top: 16px;
+}
+.section-label {
+  color: #8b949e;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+</style>
+</head>
+<body>
+
+<div class="copy-all-bar">
+  <button class="btn btn-flex" onclick="copyAll()">📋 复制全部</button>
+  <button class="btn btn-secondary" onclick="loadData()">🔄 刷新</button>
+</div>
+
+<div class="header">
+  <h1>三角洲行动每日数据</h1>
+  <div class="date" id="dateText">加载中...</div>
+  <div class="refresh-info" id="refreshInfo"></div>
+</div>
+
+<div id="content"><div class="loading">⏳ 正在获取数据...</div></div>
+
+<div class="footer">
+  数据来源: kkrb.net | 每日00:20自动更新
+</div>
+
+<div class="toast" id="toast">已复制</div>
+
+<script>
+let DATA = null;
+const PWD_SHORT = {
+  '零号大坝': '大坝', '长弓溪谷': '长弓', '巴克什': '巴克',
+  '航天基地': '航天', 'AZ3核电站': 'AZ3', '潮汐监狱': '监狱',
+  'AZ3彩六联动房': 'AZ3彩六联动房'
+};
+const PWD_ORDER = ['零号大坝','长弓溪谷','巴克什','航天基地','AZ3核电站','潮汐监狱','AZ3彩六联动房'];
+
+async function loadData() {
+  try {
+    const resp = await fetch('data.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    DATA = await resp.json();
+    render();
+  } catch(e) {
+    document.getElementById('content').innerHTML = '<div class="error">❌ 数据加载失败: ' + e.message + '<br><br>可能数据尚未生成，请稍后再试</div>';
+  }
+}
+
+function render() {
+  if (!DATA) return;
+  document.getElementById('dateText').textContent = '📅 ' + DATA.date + ' · 抓取 ' + DATA.fetch_time;
+  document.getElementById('refreshInfo').textContent = '⏱️ 页面刷新: ' + new Date().toLocaleTimeString('zh-CN');
+
+  let html = '';
+
+  // ===== 密码 =====
+  html += '<div class="card">';
+  html += '<div class="card-header"><span class="card-title">🔑 今日密码</span>';
+  html += '<button class="btn btn-small btn-secondary" onclick="copySection(\'passwords\')">复制</button></div>';
+  if (DATA.passwords) {
+    html += '<div class="pwd-grid">';
+    for (const name of PWD_ORDER) {
+      if (DATA.passwords[name] !== undefined) {
+        const short = PWD_SHORT[name] || name;
+        const isFull = name === 'AZ3彩六联动房';
+        html += `<div class="pwd-item${isFull ? ' full' : ''}">`;
+        html += `<span class="pwd-label">${short}</span>`;
+        html += `<span class="pwd-value">${DATA.passwords[name]}</span>`;
+        html += '</div>';
+      }
+    }
+    html += '</div>';
+  } else {
+    html += '<div class="error">获取失败</div>';
+  }
+  html += '</div>';
+
+  // ===== 制造推荐 =====
+  html += '<div class="card">';
+  html += '<div class="card-header"><span class="card-title">🔨 制造推荐</span>';
+  html += '<button class="btn btn-small btn-secondary" onclick="copySection(\'manufacturing\')">复制</button></div>';
+  if (DATA.manufacturing && DATA.manufacturing.length) {
+    for (const item of DATA.manufacturing) {
+      html += `<div class="mfg-item">`;
+      html += `<div class="item-name">${item.item}</div>`;
+      html += `<div class="item-profit">利润: ${item.profit.toLocaleString()}</div>`;
+      html += `</div>`;
+    }
+  } else {
+    html += '<div class="error">获取失败</div>';
+  }
+  html += '</div>';
+
+  // ===== 兑换推荐 =====
+  html += '<div class="card">';
+  html += '<div class="card-header"><span class="card-title">💱 兑换推荐</span>';
+  html += '<button class="btn btn-small btn-secondary" onclick="copySection(\'exchange\')">复制</button></div>';
+  if (DATA.exchange && DATA.exchange.length) {
+    html += '<div class="section-label">战术部门</div>';
+    for (const item of DATA.exchange) {
+      html += `<div class="exchange-item">`;
+      html += `<div class="item-name">${item.item}</div>`;
+      html += `<div class="item-profit">收益: ${item.profit.toLocaleString()}</div>`;
+      html += `</div>`;
+    }
+  } else {
+    html += '<div class="error">获取失败</div>';
+  }
+  html += '</div>';
+
+  // ===== 子弹价格 =====
+  html += '<div class="card">';
+  html += '<div class="card-header"><span class="card-title">🔫 指定子弹昨日价格</span>';
+  html += '<button class="btn btn-small btn-secondary" onclick="copySection(\'ammo\')">复制</button></div>';
+  if (DATA.tracked_ammo && DATA.tracked_ammo.length) {
+    html += '<table class="ammo-table"><thead><tr><th>类型</th><th>最高</th><th>最低</th></tr></thead><tbody>';
+    for (const item of DATA.tracked_ammo) {
+      if (item.error) {
+        html += `<tr><td class="ammo-name">${item.name}</td><td colspan="2" style="color:#8b949e">未找到</td></tr>`;
+      } else {
+        html += `<tr><td class="ammo-name">${item.name}</td>`;
+        html += `<td class="high">${item.high.toLocaleString()}</td>`;
+        html += `<td class="low">${item.low.toLocaleString()}</td></tr>`;
+      }
+    }
+    html += '</tbody></table>';
+  } else {
+    html += '<div class="error">获取失败</div>';
+  }
+  html += '</div>';
+
+  document.getElementById('content').innerHTML = html;
+}
+
+// ===== 复制功能 =====
+function buildCopyText(section) {
+  if (!DATA) return '';
+  let lines = [];
+
+  if (section === 'passwords') {
+    lines.push('➤今日密码:');
+    if (DATA.passwords) {
+      const pairs = [];
+      let pair = [];
+      for (const name of PWD_ORDER) {
+        if (DATA.passwords[name] !== undefined) {
+          const short = PWD_SHORT[name] || name;
+          if (name === 'AZ3彩六联动房') {
+            if (pair.length) { pairs.push(pair.join('﹉')); pair = []; }
+            pairs.push(`${short}:${DATA.passwords[name]}`);
+          } else {
+            pair.push(`${short}:${DATA.passwords[name]}`);
+            if (pair.length === 2) { pairs.push(pair.join('﹉')); pair = []; }
+          }
+        }
+      }
+      if (pair.length) pairs.push(pair.join('﹉'));
+      lines.push(...pairs);
+    }
+  } else if (section === 'manufacturing') {
+    lines.push('➤制造推荐:');
+    if (DATA.manufacturing) {
+      for (const item of DATA.manufacturing) {
+        lines.push(item.item);
+        lines.push(`（利润:${item.profit.toLocaleString()}）`);
+      }
+    }
+  } else if (section === 'exchange') {
+    lines.push('➤兑换推荐:');
+    lines.push('战术部门:');
+    if (DATA.exchange) {
+      for (const item of DATA.exchange) {
+        lines.push(item.item);
+        lines.push(`（收益:${item.profit.toLocaleString()}）`);
+      }
+    }
+  } else if (section === 'ammo') {
+    lines.push('➤指定子弹昨日价格');
+    lines.push('类型----------最高-------最低');
+    if (DATA.tracked_ammo) {
+      for (const item of DATA.tracked_ammo) {
+        if (item.error) {
+          lines.push(`${item.name}----------未找到`);
+        } else {
+          lines.push(`${item.name}----------${item.high.toLocaleString()}-------${item.low.toLocaleString()}`);
+        }
+      }
+    }
+  }
+  return lines.join('\n');
+}
+
+function buildAllText() {
+  if (!DATA) return '';
+  let parts = [];
+  parts.push(`三角洲行动每日数据 ${DATA.date}`);
+  parts.push('');
+  parts.push(buildCopyText('passwords'));
+  parts.push('');
+  parts.push(buildCopyText('manufacturing'));
+  parts.push('');
+  parts.push(buildCopyText('exchange'));
+  parts.push('');
+  parts.push(buildCopyText('ammo'));
+  parts.push('');
+  parts.push(`数据来源: kkrb.net | 抓取时间: ${DATA.fetch_time}`);
+  return parts.join('\n');
+}
+
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch(e) {
+    // Fallback for older browsers / non-HTTPS
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      return true;
+    } catch(e2) {
+      document.body.removeChild(ta);
+      return false;
+    }
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1500);
+}
+
+async function copySection(section) {
+  const text = buildCopyText(section);
+  const ok = await copyToClipboard(text);
+  showToast(ok ? '✅ 已复制' : '❌ 复制失败');
+}
+
+async function copyAll() {
+  const text = buildAllText();
+  const ok = await copyToClipboard(text);
+  showToast(ok ? '✅ 全部已复制' : '❌ 复制失败');
+}
+
+// ===== 初始化 =====
+loadData();
+// 每5分钟自动刷新
+setInterval(loadData, 5 * 60 * 1000);
+</script>
+</body>
+</html>
