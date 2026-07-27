@@ -1,51 +1,51 @@
 {
-  "date": "2026-07-26",
-  "fetch_time": "17:17:53",
+  "date": "2026-07-28",
+  "fetch_time": "00:20:03",
   "passwords": {
-    "零号大坝": "7159",
-    "长弓溪谷": "3888",
-    "巴克什": "1963",
-    "航天基地": "4574",
-    "潮汐监狱": "6530",
-    "AZ3核电站": "5985",
-    "AZ3彩六联动房": "327"
+    "零号大坝": "4093",
+    "长弓溪谷": "0665",
+    "巴克什": "2518",
+    "航天基地": "8450",
+    "潮汐监狱": "8051",
+    "AZ3核电站": "4220",
+    "AZ3彩六联动房": "237"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 50432.57
+      "profit": 80957.97
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 288568.5
+      "profit": 275328.5
     },
     {
       "place": "制药台",
-      "item": "精密护甲维修包",
-      "profit": 83984.25
+      "item": "高级头盔维修组合",
+      "profit": 65610.1
     },
     {
       "place": "防具台",
-      "item": "重型突击背心",
-      "profit": 243143.29
+      "item": "H09 防暴头盔",
+      "profit": 233933.44
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 40744.2,
+      "profit": 60769.2,
       "perCount": 180
     },
     {
-      "item": "5.7x28mm R37.F",
-      "profit": 18531.6,
-      "perCount": 120
+      "item": "5.8x42mm DBP10 +P",
+      "profit": 41262.2,
+      "perCount": 180
     },
     {
       "item": "9x19mm RIP",
-      "profit": 18336.4,
+      "profit": 32326.4,
       "perCount": 120
     }
   ],
@@ -54,13 +54,13 @@
       "name": ".357 Magnum FMJ",
       "high": 635,
       "low": 455,
-      "current": 635
+      "current": 545
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 599,
+      "high": 579,
       "low": 479,
-      "current": 539
+      "current": 499
     },
     {
       "name": "玻纤柳叶箭矢",
@@ -70,14 +70,14 @@
     },
     {
       "name": "9x39mm SP5",
-      "high": 484,
+      "high": 504,
       "low": 364,
-      "current": 424
+      "current": 404
     },
     {
       "name": "12 Gauge独头 AP-20",
       "high": 671,
-      "low": 551,
+      "low": 471,
       "current": 551
     }
   ]
