@@ -701,6 +701,199 @@ def format_report_from_data(data):
     return "\n".join(lines)
 
 
+def push_to_github(data_path):
+    """推送 data.json 到 GitHub 更新网页。需要代理和 token 文件，失败静默跳过。"""
+    import base64
+    import socket
+
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    TOKEN_FILE = os.path.join(SCRIPT_DIR, "delta-force-cloud", "github_token.txt")
+    REPO = "CHENYI-SaMa/delta-force-data"
+
+    # 检查 token 文件
+    if not os.path.exists(TOKEN_FILE):
+        return False, "no token file"
+    with open(TOKEN_FILE, "r") as f:
+        token = f.read().strip()
+    if not token:
+        return False, "empty token"
+
+    # 检测代理端口（Clash/v2ray 常用端口）
+    proxy_port = None
+    for port in [7893, 7890, 7891, 7892, 1080, 10809]:
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.settimeout(0.5)
+            if s.connect_ex(("127.0.0.1", port)) == 0:
+                proxy_port = port
+            s.close()
+            if proxy_port:
+                break
+        except Exception:
+            pass
+
+    if not proxy_port:
+        return False, "no proxy (accelerator not running)"
+
+    proxy = f"http://127.0.0.1:{proxy_port}"
+    proxy_handler = urllib.request.ProxyHandler({"https": proxy, "http": proxy})
+    gh_opener = urllib.request.build_opener(proxy_handler)
+
+    try:
+        # 获取远程文件 sha
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{REPO}/contents/data.json",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json",
+            },
+        )
+        resp = gh_opener.open(req, timeout=15)
+        remote_data = json.loads(resp.read().decode("utf-8"))
+        sha = remote_data["sha"]
+
+        # 读取本地 data.json 并 base64 编码
+        with open(data_path, "rb") as f:
+            content = base64.b64encode(f.read()).decode()
+
+        # 推送更新
+        body = json.dumps(
+            {
+                "message": f"Auto-update from local: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+                "content": content,
+                "sha": sha,
+            }
+        ).encode()
+        req2 = urllib.request.Request(
+            f"https://api.github.com/repos/{REPO}/contents/data.json",
+            data=body,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json",
+                "Content-Type": "application/json",
+            },
+            method="PUT",
+        )
+        resp2 = gh_opener.open(req2, timeout=15)
+        result = json.loads(resp2.read().decode("utf-8"))
+        return True, result["commit"]["sha"][:8]
+    except Exception as e:
+        return False, str(e)
+
+
+def format_wxpusher_message(data):
+    """格式化数据为 WxPusher 微信推送消息"""
+    lines = []
+    lines.append(f"三角洲行动每日数据 {data['date']}")
+    lines.append("")
+
+    # 密码短名映射
+    pwd_short = {
+        "零号大坝": "大坝",
+        "长弓溪谷": "长弓",
+        "巴克什": "巴克",
+        "航天基地": "航天",
+        "AZ3核电站": "AZ3",
+        "潮汐监狱": "监狱",
+        "AZ3彩六联动房": "AZ3彩六",
+    }
+
+    # 密码
+    lines.append("➤今日密码")
+    if data.get("passwords"):
+        pwd_order = ["零号大坝", "长弓溪谷", "巴克什", "航天基地", "AZ3核电站", "潮汐监狱", "AZ3彩六联动房"]
+        for name in pwd_order:
+            if name in data["passwords"]:
+                short = pwd_short.get(name, name)
+                lines.append(f"  {short} {data['passwords'][name]}")
+    else:
+        lines.append("  获取失败")
+    lines.append("")
+
+    # 制造推荐
+    lines.append("➤制造推荐")
+    if data.get("manufacturing"):
+        for item in data["manufacturing"]:
+            lines.append(f"  {item['item']}")
+            lines.append(f"  (利润:{item['profit']:,.0f})")
+    else:
+        lines.append("  获取失败")
+    lines.append("")
+
+    # 兑换推荐
+    lines.append("➤兑换推荐")
+    if data.get("exchange"):
+        for item in data["exchange"]:
+            lines.append(f"  {item['item']}")
+            lines.append(f"  (收益:{item['profit']:,.0f})")
+    else:
+        lines.append("  获取失败")
+    lines.append("")
+
+    # 子弹价格
+    lines.append("➤子弹昨日价格")
+    if data.get("tracked_ammo"):
+        for item in data["tracked_ammo"]:
+            if "error" in item:
+                lines.append(f"  {item['name']} 未找到")
+            else:
+                lines.append(f"  {item['name']}")
+                lines.append(f"    最高 {item['high']:,} / 最低 {item['low']:,}")
+    else:
+        lines.append("  获取失败")
+    lines.append("")
+    lines.append(f"kkrb.net | {data['fetch_time']}")
+
+    return "\n".join(lines)
+
+
+def push_wxpusher(data):
+    """通过 WxPusher 推送数据到微信。失败静默跳过。"""
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    CONFIG_FILE = os.path.join(SCRIPT_DIR, "delta-force-cloud", "wxpusher_config.json")
+
+    if not os.path.exists(CONFIG_FILE):
+        return False, "no config file"
+    try:
+        with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+            config = json.load(f)
+    except Exception:
+        return False, "config file invalid"
+
+    app_token = config.get("app_token", "")
+    uids = config.get("uids", [])
+
+    if not app_token or not uids:
+        return False, "missing app_token or uids"
+
+    content = format_wxpusher_message(data)
+    summary = f"三角洲每日数据 {data['date']}"
+
+    body = json.dumps({
+        "appToken": app_token,
+        "content": content,
+        "summary": summary,
+        "contentType": 1,
+        "uids": uids,
+    }).encode("utf-8")
+
+    try:
+        req = urllib.request.Request(
+            "https://wxpusher.zjiecode.com/api/send/message",
+            data=body,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        resp = urllib.request.urlopen(req, timeout=15)
+        result = json.loads(resp.read().decode("utf-8"))
+        if result.get("code") == 1000:
+            return True, "ok"
+        else:
+            return False, result.get("msg", "unknown error")
+    except Exception as e:
+        return False, str(e)
+
+
 def main():
     args = sys.argv[1:]
     save_to_file = "-o" in args or "--output" in args
@@ -744,6 +937,18 @@ def main():
             json_path = os.path.join(outdir, "data.json")
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
+            # 推送到 GitHub 更新网页
+            ok, msg = push_to_github(json_path)
+            if ok:
+                print(f"GitHub 网页已更新 (commit: {msg})")
+            else:
+                print(f"GitHub 推送跳过: {msg}")
+            # 推送到微信 (WxPusher)
+            ok, msg = push_wxpusher(data)
+            if ok:
+                print("微信推送成功")
+            else:
+                print(f"微信推送跳过: {msg}")
         return
 
     if json_mode:
