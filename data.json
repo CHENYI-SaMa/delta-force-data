@@ -1,12 +1,84 @@
 {
-  "date": "2026-07-30",
-  "fetch_time": "15:12:00",
-  "passwords": null,
-  "passwords_error": "HTTP Error 503: Service Temporarily Unavailable",
-  "manufacturing": null,
-  "manufacturing_error": "HTTP Error 503: Service Temporarily Unavailable",
-  "exchange": null,
-  "exchange_error": "HTTP Error 503: Service Temporarily Unavailable",
-  "tracked_ammo": null,
-  "tracked_ammo_error": "HTTP Error 503: Service Temporarily Unavailable"
+  "date": "2026-07-31",
+  "fetch_time": "00:20:02",
+  "passwords": {
+    "零号大坝": "9062",
+    "长弓溪谷": "8020",
+    "巴克什": "0289",
+    "航天基地": "4764",
+    "潮汐监狱": "7299",
+    "AZ3核电站": "6281",
+    "AZ3彩六联动房": "869"
+  },
+  "manufacturing": [
+    {
+      "place": "技术中心",
+      "item": "QCQ171冲锋枪",
+      "profit": 55300.97
+    },
+    {
+      "place": "工作台",
+      "item": "4.6x30mm AP SX",
+      "profit": 331656
+    },
+    {
+      "place": "制药台",
+      "item": "高级头盔维修组合",
+      "profit": 54520.3
+    },
+    {
+      "place": "防具台",
+      "item": "精英防弹背心",
+      "profit": 218447.8
+    }
+  ],
+  "exchange": [
+    {
+      "item": "5.45x39mm BT",
+      "profit": 48754.2,
+      "perCount": 180
+    },
+    {
+      "item": "9x19mm RIP",
+      "profit": 24522.4,
+      "perCount": 120
+    },
+    {
+      "item": "5.7x28mm R37.F",
+      "profit": 22079.6,
+      "perCount": 120
+    }
+  ],
+  "tracked_ammo": [
+    {
+      "name": ".357 Magnum FMJ",
+      "high": 590,
+      "low": 500,
+      "current": 500
+    },
+    {
+      "name": ".357 Magnum JHP",
+      "high": 419,
+      "low": 299,
+      "current": 339
+    },
+    {
+      "name": "玻纤柳叶箭矢",
+      "high": 799,
+      "low": 649,
+      "current": 709
+    },
+    {
+      "name": "9x39mm SP5",
+      "high": 504,
+      "low": 404,
+      "current": 444
+    },
+    {
+      "name": "12 Gauge独头 AP-20",
+      "high": 671,
+      "low": 511,
+      "current": 551
+    }
+  ]
 }
