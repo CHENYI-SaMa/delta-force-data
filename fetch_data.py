@@ -8,7 +8,46 @@ No external dependencies - uses only Python standard library.
 
 import json
 import os
-from delta_daily import KkrbAPI, fetch_all_data
+import urllib.request
+from delta_daily import KkrbAPI, fetch_all_data, format_wxpusher_message
+
+
+def push_wxpusher_cloud(data):
+    """GitHub Actions 环境下通过环境变量读取 WxPusher 配置并推送。"""
+    app_token = os.environ.get("WXPUSHER_APP_TOKEN", "")
+    uids_str = os.environ.get("WXPUSHER_UIDS", "")
+    uids = [u.strip() for u in uids_str.split(",") if u.strip()]
+
+    if not app_token or not uids:
+        print("WxPusher: 未配置环境变量，跳过推送")
+        return
+
+    content = format_wxpusher_message(data)
+    summary = f"三角洲每日数据 {data['date']}"
+
+    body = json.dumps({
+        "appToken": app_token,
+        "content": content,
+        "summary": summary,
+        "contentType": 1,
+        "uids": uids,
+    }).encode("utf-8")
+
+    try:
+        req = urllib.request.Request(
+            "https://wxpusher.zjiecode.com/api/send/message",
+            data=body,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        resp = urllib.request.urlopen(req, timeout=15)
+        result = json.loads(resp.read().decode("utf-8"))
+        if result.get("code") == 1000:
+            print(f"WxPusher: 推送成功 ({len(uids)}人)")
+        else:
+            print(f"WxPusher: 推送失败 - {result.get('msg', 'unknown')}")
+    except Exception as e:
+        print(f"WxPusher: 推送异常 - {e}")
 
 
 def main():
@@ -33,6 +72,9 @@ def main():
         print(f"  Exchange: {len(data['exchange'])} items")
     if data.get("tracked_ammo"):
         print(f"  Tracked ammo: {len(data['tracked_ammo'])} types")
+
+    # 推送到微信（通过环境变量读取配置）
+    push_wxpusher_cloud(data)
 
 
 if __name__ == "__main__":
