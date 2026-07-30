@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+# Local secrets
+github_token.txt
+wxpusher_config.json
