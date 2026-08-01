@@ -1,66 +1,66 @@
 {
-  "date": "2026-07-31",
-  "fetch_time": "17:54:18",
+  "date": "2026-08-02",
+  "fetch_time": "00:45:12",
   "passwords": {
-    "零号大坝": "4290",
-    "长弓溪谷": "4852",
-    "巴克什": "7141",
-    "航天基地": "9678",
-    "潮汐监狱": "7758",
-    "AZ3核电站": "3305",
-    "AZ3彩六联动房": "869"
+    "零号大坝": "8481",
+    "长弓溪谷": "8615",
+    "巴克什": "4382",
+    "航天基地": "8357",
+    "潮汐监狱": "4517",
+    "AZ3核电站": "6600",
+    "AZ3彩六联动房": "449"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 50432.57
+      "profit": 47735.87
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 353923.5
+      "profit": 319278.5
     },
     {
       "place": "制药台",
       "item": "精密头盔维修包",
-      "profit": 65457.45
+      "profit": 58946.25
     },
     {
       "place": "防具台",
       "item": "重型突击背心",
-      "profit": 228797.24
+      "profit": 232228.49
     }
   ],
   "exchange": [
     {
+      "item": "5.45x39mm BT",
+      "profit": 38839.2,
+      "perCount": 180
+    },
+    {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 30048.2,
+      "profit": 27728.2,
       "perCount": 180
     },
     {
       "item": "5.7x28mm R37.F",
-      "profit": 19807.6,
+      "profit": 26079.6,
       "perCount": 120
-    },
-    {
-      "item": "5.45x39mm BT",
-      "profit": 17959.2,
-      "perCount": 180
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 590,
+      "high": 635,
       "low": 455,
-      "current": 545
+      "current": 500
     },
     {
       "name": ".357 Magnum JHP",
       "high": 399,
-      "low": 299,
-      "current": 339
+      "low": 279,
+      "current": 299
     },
     {
       "name": "玻纤柳叶箭矢",
@@ -71,13 +71,13 @@
     {
       "name": "9x39mm SP5",
       "high": 524,
-      "low": 404,
-      "current": 464
+      "low": 424,
+      "current": 504
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 551,
-      "low": 471,
+      "high": 511,
+      "low": 431,
       "current": 471
     }
   ]
