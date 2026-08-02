@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-03",
-  "fetch_time": "00:23:20",
+  "date": "2026-08-02",
+  "fetch_time": "17:17:21",
   "passwords": {
     "零号大坝": "9390",
     "长弓溪谷": "0062",
@@ -14,38 +14,38 @@
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 55955.97
+      "profit": 50432.57
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 310821
+      "profit": 312788.5
     },
     {
       "place": "制药台",
       "item": "精密护甲维修包",
-      "profit": 65337.55
+      "profit": 75359.25
     },
     {
       "place": "防具台",
       "item": "重型突击背心",
-      "profit": 232759.74
+      "profit": 239935.89
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 45799.2,
+      "profit": 41794.2,
       "perCount": 180
     },
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 30945.2,
+      "profit": 25338.2,
       "perCount": 180
     },
     {
-      "item": "9x19mm RIP",
-      "profit": 24924.4,
+      "item": "5.7x28mm R37.F",
+      "profit": 19599.6,
       "perCount": 120
     }
   ],
@@ -54,19 +54,19 @@
       "name": ".357 Magnum FMJ",
       "high": 590,
       "low": 455,
-      "current": 500
+      "current": 545
     },
     {
       "name": ".357 Magnum JHP",
       "high": 359,
       "low": 279,
-      "current": 319
+      "current": 299
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
       "low": 649,
-      "current": 709
+      "current": 679
     },
     {
       "name": "9x39mm SP5",
@@ -78,7 +78,7 @@
       "name": "12 Gauge独头 AP-20",
       "high": 511,
       "low": 431,
-      "current": 564
+      "current": 471
     }
   ]
 }
