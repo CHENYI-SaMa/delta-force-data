@@ -1,25 +1,25 @@
 {
-  "date": "2026-08-07",
-  "fetch_time": "23:37:59",
+  "date": "2026-08-08",
+  "fetch_time": "00:20:03",
   "passwords": {
-    "零号大坝": "9514",
-    "长弓溪谷": "4654",
-    "巴克什": "0200",
-    "航天基地": "6835",
-    "潮汐监狱": "0557",
-    "AZ3核电站": "8436",
+    "零号大坝": "2937",
+    "长弓溪谷": "2760",
+    "巴克什": "6331",
+    "航天基地": "2510",
+    "潮汐监狱": "6168",
+    "AZ3核电站": "4620",
     "AZ3彩六联动房": "444"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 72867.87
+      "profit": 56687.67
     },
     {
       "place": "工作台",
-      "item": "5.45x39mm BS",
-      "profit": 276675.7
+      "item": "4.6x30mm AP SX",
+      "profit": 278751
     },
     {
       "place": "制药台",
@@ -29,23 +29,23 @@
     {
       "place": "防具台",
       "item": "H09 防暴头盔",
-      "profit": 221001.34
+      "profit": 221588.84
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 77404.2,
+      "profit": 66874.2,
       "perCount": 180
     },
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 58083.2,
+      "profit": 52476.2,
       "perCount": 180
     },
     {
       "item": "9x19mm RIP",
-      "profit": 32802.4,
+      "profit": 31734.4,
       "perCount": 120
     }
   ],
@@ -58,27 +58,27 @@
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 479,
-      "low": 399,
-      "current": 399
+      "high": 459,
+      "low": 379,
+      "current": 379
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 679,
-      "current": 739
+      "low": 572,
+      "current": 709
     },
     {
       "name": "9x39mm SP5",
-      "high": 524,
-      "low": 424,
-      "current": 524
+      "high": 604,
+      "low": 444,
+      "current": 484
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 591,
+      "high": 551,
       "low": 431,
-      "current": 551
+      "current": 471
     }
   ]
 }
