@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-11",
-  "fetch_time": "00:20:05",
+  "date": "2026-08-10",
+  "fetch_time": "17:10:35",
   "passwords": {
     "零号大坝": "0676",
     "长弓溪谷": "4418",
@@ -13,40 +13,40 @@
   "manufacturing": [
     {
       "place": "技术中心",
-      "item": "SVD狙击步枪",
-      "profit": 42655
+      "item": "QCQ171冲锋枪",
+      "profit": 53129.27
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 276856
+      "profit": 288296
     },
     {
       "place": "制药台",
       "item": "精密头盔维修包",
-      "profit": 52846.25
+      "profit": 55107.45
     },
     {
       "place": "防具台",
-      "item": "重型突击背心",
-      "profit": 193988.79
+      "item": "H09 防暴头盔",
+      "profit": 206808.19
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 34834.2,
-      "perCount": 180
-    },
-    {
-      "item": "5.8x42mm DBP10 +P",
-      "profit": 25338.2,
+      "profit": 27874.2,
       "perCount": 180
     },
     {
       "item": "9x19mm RIP",
-      "profit": 23454.4,
+      "profit": 17268.4,
       "perCount": 120
+    },
+    {
+      "item": "12 Gauge 8.5毫米鹿弹",
+      "profit": 15659.6,
+      "perCount": 80
     }
   ],
   "tracked_ammo": [
