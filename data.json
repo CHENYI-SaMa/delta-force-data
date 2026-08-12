@@ -1,52 +1,52 @@
 {
-  "date": "2026-08-11",
-  "fetch_time": "17:14:21",
+  "date": "2026-08-12",
+  "fetch_time": "17:14:33",
   "passwords": {
-    "零号大坝": "6131",
-    "长弓溪谷": "4686",
-    "巴克什": "6368",
-    "航天基地": "8671",
-    "潮汐监狱": "8818",
-    "AZ3核电站": "0210",
-    "AZ3彩六联动房": "403"
+    "零号大坝": "0003",
+    "长弓溪谷": "3694",
+    "巴克什": "8671",
+    "航天基地": "8186",
+    "潮汐监狱": "4856",
+    "AZ3核电站": "6941",
+    "AZ3彩六联动房": "443"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 50432.57
+      "profit": 53129.27
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 290761
+      "profit": 292226
     },
     {
       "place": "制药台",
       "item": "精密护甲维修包",
-      "profit": 50808.4
+      "profit": 54659.25
     },
     {
       "place": "防具台",
-      "item": "H09 防暴头盔",
-      "profit": 200929.64
+      "item": "重型突击背心",
+      "profit": 197572.44
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 27874.2,
+      "profit": 30829.2,
+      "perCount": 180
+    },
+    {
+      "item": "5.7x28mm SS193",
+      "profit": 28042.6,
       "perCount": 180
     },
     {
       "item": "5.8x42mm DBP10 +P",
       "profit": 19731.2,
       "perCount": 180
-    },
-    {
-      "item": "9x19mm RIP",
-      "profit": 18336.4,
-      "perCount": 120
     }
   ],
   "tracked_ammo": [
@@ -58,27 +58,27 @@
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 439,
-      "low": 379,
-      "current": 419
+      "high": 459,
+      "low": 399,
+      "current": 439
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 619,
+      "low": 679,
       "current": 709
     },
     {
       "name": "9x39mm SP5",
       "high": 524,
-      "low": 484,
-      "current": 464
+      "low": 464,
+      "current": 504
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 711,
+      "high": 751,
       "low": 471,
-      "current": 551
+      "current": 591
     }
   ]
 }
