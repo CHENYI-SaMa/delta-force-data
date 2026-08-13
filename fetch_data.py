@@ -65,7 +65,7 @@ def format_cloud_wxpusher_message(data):
     return "\n".join(lines)
 
 
-def push_wxpusher_cloud(data):
+def # push_wxpusher_cloud(data)  # Disabled - local task handles push:
     """GitHub Actions 环境下通过环境变量读取 WxPusher 配置并推送。"""
     app_token = os.environ.get("WXPUSHER_APP_TOKEN", "")
     uids_str = os.environ.get("WXPUSHER_UIDS", "")
