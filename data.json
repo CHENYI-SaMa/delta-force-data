@@ -1,84 +1,84 @@
 {
-  "date": "2026-08-13",
-  "fetch_time": "17:14:42",
+  "date": "2026-08-15",
+  "fetch_time": "00:20:02",
   "passwords": {
-    "零号大坝": "0004",
-    "长弓溪谷": "4116",
-    "巴克什": "4091",
-    "航天基地": "4085",
-    "潮汐监狱": "2555",
-    "AZ3核电站": "8864",
-    "AZ3彩六联动房": "902"
+    "零号大坝": "5461",
+    "长弓溪谷": "0801",
+    "巴克什": "5975",
+    "航天基地": "0174",
+    "潮汐监狱": "5377",
+    "AZ3核电站": "0515",
+    "AZ3彩六联动房": "203"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 73522.87
+      "profit": 49252.57
     },
     {
       "place": "工作台",
-      "item": "4.6x30mm AP SX",
-      "profit": 278986
+      "item": "5.45x39mm BS",
+      "profit": 275128.7
     },
     {
       "place": "制药台",
-      "item": "高级头盔维修组合",
-      "profit": 68060.5
+      "item": "精密护甲维修包",
+      "profit": 62154.25
     },
     {
       "place": "防具台",
-      "item": "H09 防暴头盔",
-      "profit": 210094.24
+      "item": "重型突击背心",
+      "profit": 199933.69
     }
   ],
   "exchange": [
     {
-      "item": "5.8x42mm DBP10 +P",
-      "profit": 60473.2,
-      "perCount": 180
-    },
-    {
       "item": "5.45x39mm BT",
-      "profit": 59914.2,
+      "profit": 38839.2,
       "perCount": 180
     },
     {
-      "item": "5.7x28mm SS193",
-      "profit": 30196.6,
+      "item": "5.8x42mm DBP10 +P",
+      "profit": 25338.2,
       "perCount": 180
+    },
+    {
+      "item": "9x19mm RIP",
+      "profit": 21244.4,
+      "perCount": 120
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 590,
+      "high": 545,
       "low": 500,
       "current": 545
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 459,
-      "low": 319,
-      "current": 399
+      "high": 479,
+      "low": 419,
+      "current": 439
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 679,
-      "current": 799
+      "low": 739,
+      "current": 739
     },
     {
       "name": "9x39mm SP5",
-      "high": 678,
-      "low": 464,
+      "high": 604,
+      "low": 524,
       "current": 524
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 751,
-      "low": 551,
-      "current": 751
+      "high": 631,
+      "low": 591,
+      "current": 591
     }
   ]
 }
