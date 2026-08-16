@@ -1,72 +1,72 @@
 {
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "fetch_time": "00:20:03",
   "passwords": {
-    "零号大坝": "4874",
-    "长弓溪谷": "4431",
-    "巴克什": "2762",
-    "航天基地": "4030",
-    "潮汐监狱": "2327",
-    "AZ3核电站": "8250",
-    "AZ3彩六联动房": "203"
+    "零号大坝": "4280",
+    "长弓溪谷": "0165",
+    "巴克什": "8739",
+    "航天基地": "1573",
+    "潮汐监狱": "3902",
+    "AZ3核电站": "2607",
+    "AZ3彩六联动房": "401"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 47080.87
+      "profit": 78261.27
     },
     {
       "place": "工作台",
-      "item": "5.56x45mm M995",
-      "profit": 275801.6
+      "item": "5.8x42mm DVC12 +P",
+      "profit": 264120.4
     },
     {
       "place": "制药台",
       "item": "精密护甲维修包",
-      "profit": 66005.1
+      "profit": 69721.8
     },
     {
       "place": "防具台",
       "item": "H09 防暴头盔",
-      "profit": 207658.19
+      "profit": 209831.74
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 38839.2,
+      "profit": 81844.2,
       "perCount": 180
     },
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 36552.2,
+      "profit": 69800.2,
       "perCount": 180
     },
     {
-      "item": "9x19mm RIP",
-      "profit": 22714.4,
-      "perCount": 120
+      "item": "5.56x45mm M855A1",
+      "profit": 36529.2,
+      "perCount": 180
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 635,
+      "high": 680,
       "low": 500,
-      "current": 545
+      "current": 590
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 439,
-      "low": 339,
-      "current": 459
+      "high": 499,
+      "low": 299,
+      "current": 379
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 709,
-      "current": 709
+      "low": 679,
+      "current": 739
     },
     {
       "name": "9x39mm SP5",
