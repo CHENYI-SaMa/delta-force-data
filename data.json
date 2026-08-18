@@ -1,84 +1,84 @@
 {
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "fetch_time": "00:20:02",
   "passwords": {
-    "零号大坝": "4791",
-    "长弓溪谷": "6925",
-    "巴克什": "4592",
-    "航天基地": "2567",
-    "潮汐监狱": "2827",
-    "AZ3核电站": "0810",
-    "AZ3彩六联动房": "052"
+    "零号大坝": "4583",
+    "长弓溪谷": "4264",
+    "巴克什": "8258",
+    "航天基地": "2733",
+    "潮汐监狱": "8456",
+    "AZ3核电站": "0882",
+    "AZ3彩六联动房": "610"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 49252.57
+      "profit": 49907.57
     },
     {
       "place": "工作台",
       "item": "7.62x51mm M62",
-      "profit": 274598.6
+      "profit": 282668.6
     },
     {
       "place": "制药台",
       "item": "高级头盔维修组合",
-      "profit": 59790.3
+      "profit": 61770.3
     },
     {
       "place": "防具台",
-      "item": "重型突击背心",
-      "profit": 196502.44
+      "item": "H09 防暴头盔",
+      "profit": 205870.69
     }
   ],
   "exchange": [
+    {
+      "item": "5.8x42mm DBP10 +P",
+      "profit": 30945.2,
+      "perCount": 180
+    },
     {
       "item": "5.45x39mm BT",
       "profit": 27874.2,
       "perCount": 180
     },
     {
-      "item": "5.8x42mm DBP10 +P",
-      "profit": 25338.2,
-      "perCount": 180
-    },
-    {
       "item": "9x19mm RIP",
-      "profit": 23084.4,
+      "profit": 22016.4,
       "perCount": 120
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 680,
+      "high": 1985,
       "low": 545,
-      "current": 635
+      "current": 815
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 479,
-      "low": 379,
-      "current": 459
+      "high": 459,
+      "low": 359,
+      "current": 419
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 617,
-      "current": 709
+      "low": 619,
+      "current": 679
     },
     {
       "name": "9x39mm SP5",
-      "high": 758,
-      "low": 464,
+      "high": 524,
+      "low": 444,
       "current": 504
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 711,
-      "low": 591,
-      "current": 591
+      "high": 751,
+      "low": 511,
+      "current": 631
     }
   ]
 }
