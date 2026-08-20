@@ -1,25 +1,25 @@
 {
-  "date": "2026-08-20",
-  "fetch_time": "00:20:03",
+  "date": "2026-08-21",
+  "fetch_time": "00:20:04",
   "passwords": {
-    "零号大坝": "0688",
-    "长弓溪谷": "0441",
-    "巴克什": "0601",
-    "航天基地": "0826",
-    "潮汐监狱": "0896",
-    "AZ3核电站": "0020",
+    "零号大坝": "5226",
+    "长弓溪谷": "0489",
+    "巴克什": "0310",
+    "航天基地": "1830",
+    "潮汐监狱": "8848",
+    "AZ3核电站": "9867",
     "AZ3彩六联动房": "445"
   },
   "manufacturing": [
     {
       "place": "技术中心",
-      "item": "QCQ171冲锋枪",
-      "profit": 54645.97
+      "item": "MK4冲锋枪",
+      "profit": 49252.57
     },
     {
       "place": "工作台",
       "item": "7.62x51mm M62",
-      "profit": 290734.85
+      "profit": 299678.6
     },
     {
       "place": "制药台",
@@ -29,56 +29,56 @@
     {
       "place": "防具台",
       "item": "重型突击背心",
-      "profit": 201602.44
+      "profit": 199933.69
     }
   ],
   "exchange": [
     {
       "item": "5.45x39mm BT",
-      "profit": 34834.2,
-      "perCount": 180
-    },
-    {
-      "item": "5.8x42mm DBP10 +P",
-      "profit": 25338.2,
+      "profit": 41794.2,
       "perCount": 180
     },
     {
       "item": "9x19mm RIP",
-      "profit": 23084.4,
+      "profit": 22016.4,
       "perCount": 120
+    },
+    {
+      "item": "5.8x42mm DBP10 +P",
+      "profit": 19731.2,
+      "perCount": 180
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 860,
-      "low": 590,
-      "current": 680
+      "high": 1805,
+      "low": 545,
+      "current": 635
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 519,
-      "low": 379,
+      "high": 479,
+      "low": 399,
       "current": 399
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
       "low": 649,
-      "current": 739
+      "current": 709
     },
     {
       "name": "9x39mm SP5",
       "high": 524,
-      "low": 464,
+      "low": 424,
       "current": 504
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 951,
-      "low": 591,
-      "current": 631
+      "high": 911,
+      "low": 631,
+      "current": 751
     }
   ]
 }
