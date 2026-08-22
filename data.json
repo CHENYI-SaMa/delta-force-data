@@ -1,41 +1,41 @@
 {
-  "date": "2026-08-22",
+  "date": "2026-08-23",
   "fetch_time": "00:20:03",
   "passwords": {
-    "零号大坝": "2387",
-    "长弓溪谷": "0685",
-    "巴克什": "8394",
-    "航天基地": "2165",
-    "潮汐监狱": "8949",
-    "AZ3核电站": "2348",
-    "AZ3彩六联动房": "067"
+    "零号大坝": "8813",
+    "长弓溪谷": "0942",
+    "巴克什": "7165",
+    "航天基地": "8594",
+    "潮汐监狱": "7567",
+    "AZ3核电站": "8801",
+    "AZ3彩六联动房": "266"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 65432.77
+      "profit": 61349.37
     },
     {
       "place": "工作台",
       "item": "7.62x51mm M62",
-      "profit": 294882.35
+      "profit": 312889.85
     },
     {
       "place": "制药台",
-      "item": "精密头盔维修包",
-      "profit": 60746.75
+      "item": "精密护甲维修包",
+      "profit": 66405.95
     },
     {
       "place": "防具台",
       "item": "H09 防暴头盔",
-      "profit": 209461.74
+      "profit": 207045.69
     }
   ],
   "exchange": [
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 42159.2,
+      "profit": 47766.2,
       "perCount": 180
     },
     {
@@ -45,40 +45,40 @@
     },
     {
       "item": "5.7x28mm SS193",
-      "profit": 29850.6,
+      "profit": 23253.6,
       "perCount": 180
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 725,
-      "low": 545,
+      "high": 635,
+      "low": 500,
       "current": 590
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 519,
-      "low": 379,
-      "current": 419
+      "high": 479,
+      "low": 399,
+      "current": 439
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 799,
-      "low": 649,
-      "current": 679
+      "low": 679,
+      "current": 739
     },
     {
       "name": "9x39mm SP5",
-      "high": 758,
-      "low": 504,
+      "high": 688,
+      "low": 484,
       "current": 524
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 831,
-      "low": 631,
-      "current": 671
+      "high": 751,
+      "low": 624,
+      "current": 631
     }
   ]
 }
