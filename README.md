@@ -1,6 +1,6 @@
 # 三角洲每日数据
 
-数据来源：[kkrb.net](https://www.kkrb.net/) 三角洲行动一图流，每天 00:20 自动抓取。访问 GitHub Pages 在线查看。
+三角洲行动一图流，每天 00:20 自动抓取。访问 GitHub Pages 在线查看。
 
 ## 数据内容
 
