@@ -8,3 +8,5 @@
 - 指定子弹昨日最高/最低价（可自由指定内容）
 
 项目可以通过配置WxPusher等推送软件进行信息获取
+也可以直接访问：https://chenyi-sama.github.io/delta-force-data/
+直接查看每日信息
