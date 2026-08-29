@@ -1,52 +1,52 @@
 {
-  "date": "2026-08-28",
-  "fetch_time": "00:20:03",
+  "date": "2026-08-29",
+  "fetch_time": "15:46:11",
   "passwords": {
-    "零号大坝": "2344",
-    "长弓溪谷": "8051",
-    "巴克什": "2990",
-    "航天基地": "4246",
-    "潮汐监狱": "0001",
-    "AZ3核电站": "2524",
+    "零号大坝": "7343",
+    "长弓溪谷": "1484",
+    "巴克什": "4234",
+    "航天基地": "0915",
+    "潮汐监狱": "2535",
+    "AZ3核电站": "8191",
     "AZ3彩六联动房": "266"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "QCQ171冲锋枪",
-      "profit": 89048.07
+      "profit": 70171.17
     },
     {
       "place": "工作台",
       "item": "4.6x30mm AP SX",
-      "profit": 328656
+      "profit": 366368.5
     },
     {
       "place": "制药台",
-      "item": "精密头盔维修包",
-      "profit": 60746.75
+      "item": "高级头盔维修组合",
+      "profit": 76435.4
     },
     {
       "place": "防具台",
       "item": "H09 防暴头盔",
-      "profit": 211224.24
+      "profit": 214794.24
     }
   ],
   "exchange": [
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 58980.2,
+      "profit": 76473.2,
       "perCount": 180
     },
     {
       "item": "5.45x39mm BT",
-      "profit": 58864.2,
+      "profit": 47044.2,
       "perCount": 180
     },
     {
-      "item": "9x19mm RIP",
-      "profit": 30962.4,
-      "perCount": 120
+      "item": "5.7x28mm SS193",
+      "profit": 31626.6,
+      "perCount": 180
     }
   ],
   "tracked_ammo": [
@@ -58,27 +58,27 @@
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 459,
-      "low": 339,
-      "current": 379
+      "high": 419,
+      "low": 319,
+      "current": 419
     },
     {
       "name": "玻纤柳叶箭矢",
-      "high": 439,
+      "high": 409,
       "low": 379,
       "current": 409
     },
     {
       "name": "9x39mm SP5",
-      "high": 404,
-      "low": 324,
-      "current": 344
+      "high": 384,
+      "low": 344,
+      "current": 404
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 871,
-      "low": 671,
-      "current": 711
+      "high": 791,
+      "low": 631,
+      "current": 751
     }
   ]
 }
