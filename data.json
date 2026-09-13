@@ -1,41 +1,41 @@
 {
-  "date": "2026-09-12",
-  "fetch_time": "00:20:03",
+  "date": "2026-09-13",
+  "fetch_time": "09:26:59",
   "passwords": {
-    "零号大坝": "2354",
-    "长弓溪谷": "0661",
-    "巴克什": "6328",
-    "航天基地": "8622",
-    "潮汐监狱": "8467",
-    "AZ3核电站": "4410",
+    "零号大坝": "2774",
+    "长弓溪谷": "9494",
+    "巴克什": "2077",
+    "航天基地": "5906",
+    "潮汐监狱": "0508",
+    "AZ3核电站": "3415",
     "AZ3彩六联动房": "266"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "M14射手步枪",
-      "profit": 84964.75
+      "profit": 84359.75
     },
     {
       "place": "工作台",
-      "item": ".300 BLK TAC-TX",
-      "profit": 366395.4
+      "item": "5.8x42mm DBP10",
+      "profit": 315362.6
     },
     {
       "place": "制药台",
-      "item": "高级头盔维修组合",
-      "profit": 110559.1
+      "item": "感知强化剂",
+      "profit": 33071
     },
     {
       "place": "防具台",
-      "item": "重型突击背心",
-      "profit": 244331.94
+      "item": "H09 防暴头盔",
+      "profit": 208767.79
     }
   ],
   "exchange": [
     {
       "item": "9x19mm CT",
-      "profit": 122594.6,
+      "profit": 113384.6,
       "perCount": 180
     },
     {
@@ -45,40 +45,40 @@
     },
     {
       "item": "5.45x39mm BT",
-      "profit": 34834.2,
+      "profit": 45799.2,
       "perCount": 180
     }
   ],
   "tracked_ammo": [
     {
       "name": ".357 Magnum FMJ",
-      "high": 635,
-      "low": 455,
+      "high": 590,
+      "low": 500,
       "current": 545
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 639,
-      "low": 379,
-      "current": 519
+      "high": 599,
+      "low": 299,
+      "current": 439
     },
     {
       "name": "玻纤柳叶箭矢",
       "high": 769,
-      "low": 529,
-      "current": 589
+      "low": 589,
+      "current": 769
     },
     {
       "name": "9x39mm SP5",
-      "high": 284,
+      "high": 364,
       "low": 244,
-      "current": 264
+      "current": 304
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 511,
+      "high": 551,
       "low": 391,
-      "current": 471
+      "current": 511
     }
   ]
 }
