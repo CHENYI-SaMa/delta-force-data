@@ -1,35 +1,35 @@
 {
-  "date": "2026-09-16",
-  "fetch_time": "09:48:35",
+  "date": "2026-09-17",
+  "fetch_time": "00:20:06",
   "passwords": {
-    "零号大坝": "6106",
-    "长弓溪谷": "2348",
-    "巴克什": "2912",
-    "航天基地": "2973",
-    "潮汐监狱": "4053",
-    "AZ3核电站": "8801",
+    "零号大坝": "7107",
+    "长弓溪谷": "4859",
+    "巴克什": "9232",
+    "航天基地": "9772",
+    "潮汐监狱": "3742",
+    "AZ3核电站": "1824",
     "AZ3彩六联动房": "266"
   },
   "manufacturing": [
     {
       "place": "技术中心",
       "item": "MK4冲锋枪",
-      "profit": 58360.72
+      "profit": 55033.27
     },
     {
       "place": "工作台",
-      "item": ".300 BLK TAC-TX",
-      "profit": 288680.4
+      "item": ".45 ACP Super",
+      "profit": 342665.1
     },
     {
       "place": "制药台",
-      "item": "感知强化剂",
-      "profit": 38868.5
+      "item": "高级护甲维修组合",
+      "profit": 65202.7
     },
     {
       "place": "防具台",
-      "item": "H09 防暴头盔",
-      "profit": 182049.64
+      "item": "重型突击背心",
+      "profit": 228668.39
     }
   ],
   "exchange": [
@@ -40,12 +40,12 @@
     },
     {
       "item": "5.8x42mm DBP10 +P",
-      "profit": 111369.2,
+      "profit": 113759.2,
       "perCount": 180
     },
     {
       "item": "5.45x39mm BT",
-      "profit": 41794.2,
+      "profit": 52759.2,
       "perCount": 180
     }
   ],
@@ -54,31 +54,31 @@
       "name": ".357 Magnum FMJ",
       "high": 590,
       "low": 455,
-      "current": 500
+      "current": 545
     },
     {
       "name": ".357 Magnum JHP",
-      "high": 479,
-      "low": 259,
-      "current": 459
+      "high": 599,
+      "low": 299,
+      "current": 359
     },
     {
       "name": "玻纤柳叶箭矢",
-      "high": 709,
-      "low": 452,
+      "high": 799,
+      "low": 499,
       "current": 589
     },
     {
       "name": "9x39mm SP5",
-      "high": 244,
-      "low": 224,
-      "current": 244
+      "high": 304,
+      "low": 204,
+      "current": 264
     },
     {
       "name": "12 Gauge独头 AP-20",
-      "high": 911,
-      "low": 154,
-      "current": 431
+      "high": 471,
+      "low": 391,
+      "current": 471
     }
   ]
 }
